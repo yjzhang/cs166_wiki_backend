@@ -8,6 +8,10 @@ app = Flask(__name__)
 
 db_dir = '/home/yjzhang/privacy/database.db'
 
+@app.route('/')
+def index():
+    return 'testing'
+
 @app.route('/save_browser_hash')
 def save_browser_data(hash, ip, lat = "", lon = ""):
     conn = sqlite3.connect(db_dir)
@@ -29,3 +33,6 @@ def save_browser_data(hash, ip, lat = "", lon = ""):
     conn.commit()
     conn.close()
     return results_str
+
+if __name__ == '__main__':
+    app.run()
