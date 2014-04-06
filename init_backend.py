@@ -9,7 +9,8 @@ if __name__ == '__main__':
         cursor.execute('DROP TABLE hashes')
         cursor.execute('DROP TABLE ip_hashes')
     except:
-        cursor.execute('CREATE TABLE hashes (hash text)')
-        cursor.execute('CREATE TABLE ip_hashes (ip text, hash text, datetime text, lat text, lon text)')
+        pass
+    cursor.execute('CREATE TABLE hashes (hash text)')
+    cursor.execute('CREATE TABLE ip_hashes (ip text, hash text, datetime text, lat text, lon text)')
     conn.commit()
     conn.close()
